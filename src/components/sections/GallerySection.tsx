@@ -119,22 +119,23 @@ export function GallerySection() {
     <section id="gallery" className="sec bg-oak-black overflow-hidden">
       <div className="wrap">
         {/* Header */}
-        <div className="flex flex-col items-center text-center max-w-xl mx-auto mb-12 md:mb-16">
-          <AnimatedText className="flex flex-col items-center w-full">
-            <span className="eyebrow">Visual Journey</span>
-            <div className="w-10 h-px bg-oak-gold mt-3" />
-          </AnimatedText>
-          <AnimatedText delay={0.15}>
-            <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream mt-6 mb-4 leading-[1.15]">
-              Spaces That{" "}
-              <span className="italic text-oak-gold">Speak for Themselves</span>
-            </h2>
-          </AnimatedText>
-          <AnimatedText delay={0.25}>
-            <p className="text-oak-muted text-sm md:text-base font-light leading-relaxed max-w-lg mx-auto">
-              Step inside. Every photograph tells a story of elegance, comfort, and the Hotel Oak experience.
-            </p>
-          </AnimatedText>
+        <div className="w-full flex justify-center mb-12 md:mb-16">
+          <div className="flex flex-col items-center text-center max-w-xl">
+            <AnimatedText className="flex flex-col items-center w-full">
+              <span className="eyebrow">Visual Journey</span>
+              <div className="w-10 h-px bg-oak-gold mt-3" />
+            </AnimatedText>
+            <AnimatedText delay={0.15}>
+              <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream mt-6 mb-4 leading-[1.15]">
+                Spaces That <span className="italic text-oak-gold">Speak for Themselves</span>
+              </h2>
+            </AnimatedText>
+            <AnimatedText delay={0.25}>
+              <p className="text-oak-muted text-sm md:text-base font-light leading-relaxed">
+                Step inside. Every photograph tells a story of elegance, comfort, and the Hotel Oak experience.
+              </p>
+            </AnimatedText>
+          </div>
         </div>
 
         {/* Masonry Grid */}

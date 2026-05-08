@@ -89,16 +89,17 @@ function RoomCard({ room, index }: { room: (typeof ROOM_TYPES)[0]; index: number
           ))}
         </div>
 
-        <div className="w-full h-px bg-white/5 mb-5" />
+        {/* Divider */}
+        <div className="w-full h-px bg-white/10 my-6" />
 
         {/* Amenity tags */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-x-2 gap-y-3 mb-8">
           {room.amenities.slice(0, 4).map((a) => {
             const Icon = iconMap[a.icon] || Shield;
             return (
               <div key={a.label} className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-sm px-2.5 py-1.5">
                 <Icon size={11} className="text-oak-gold shrink-0" />
-                <span className="text-oak-muted-light text-[0.65rem] font-light leading-none">{a.label}</span>
+                <span className="text-oak-cream text-[0.65rem] font-light leading-none">{a.label}</span>
               </div>
             );
           })}
@@ -113,7 +114,7 @@ function RoomCard({ room, index }: { room: (typeof ROOM_TYPES)[0]; index: number
         <div className="mt-auto">
           <button
             onClick={() => { addRoom(room.id); openBooking(); }}
-            className="w-full flex items-center justify-center gap-2 py-4 border border-oak-gold/30 hover:border-oak-gold hover:bg-oak-gold hover:text-oak-black text-oak-cream transition-all duration-300 text-[0.65rem] tracking-[0.15em] uppercase font-medium rounded-sm group"
+            className="w-full flex items-center justify-center gap-2 py-3.5 bg-oak-gold/5 border border-oak-gold/40 hover:bg-oak-gold hover:text-oak-black text-oak-cream transition-all duration-300 text-[0.65rem] tracking-[0.15em] uppercase font-medium rounded-sm group"
           >
             Reserve This Room
             <ChevronRight size={14} className="text-oak-gold group-hover:text-oak-black transition-colors" />
@@ -130,22 +131,24 @@ export function RoomsSection() {
       <div className="wrap">
 
         {/* Header */}
-        <div className="flex flex-col items-center text-center max-w-xl mx-auto mb-14 md:mb-16">
-          <AnimatedText className="flex flex-col items-center w-full">
-            <span className="eyebrow">Accommodations</span>
-            <div className="w-10 h-px bg-oak-gold mt-3 mb-0" />
-          </AnimatedText>
-          <AnimatedText delay={0.15}>
-            <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream mt-6 mb-4 leading-[1.15]">
-              Rooms Crafted for{" "}
-              <span className="italic text-oak-gold">Exceptional Rest</span>
-            </h2>
-          </AnimatedText>
-          <AnimatedText delay={0.25}>
-            <p className="text-oak-muted text-sm md:text-base font-light leading-relaxed">
-              Each room is a sanctuary unto itself — thoughtfully designed to offer the perfect balance of luxury, comfort, and modern convenience.
-            </p>
-          </AnimatedText>
+        <div className="w-full flex justify-center mb-14 md:mb-16">
+          <div className="flex flex-col items-center text-center max-w-xl">
+            <AnimatedText className="flex flex-col items-center w-full">
+              <span className="eyebrow">Accommodations</span>
+              <div className="w-10 h-px bg-oak-gold mt-3 mb-0" />
+            </AnimatedText>
+            <AnimatedText delay={0.15}>
+              <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream mt-6 mb-4 leading-[1.15]">
+                Rooms Crafted for{" "}
+                <span className="italic text-oak-gold">Exceptional Rest</span>
+              </h2>
+            </AnimatedText>
+            <AnimatedText delay={0.25}>
+              <p className="text-oak-muted text-sm md:text-base font-light leading-relaxed">
+                Each room is a sanctuary unto itself — thoughtfully designed to offer the perfect balance of luxury, comfort, and modern convenience.
+              </p>
+            </AnimatedText>
+          </div>
         </div>
 
         {/* Grid */}

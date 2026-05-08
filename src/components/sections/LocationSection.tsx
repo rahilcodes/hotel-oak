@@ -20,22 +20,23 @@ export function LocationSection() {
     <section id="location" className="sec bg-oak-black overflow-hidden">
       <div className="wrap">
 
-        <div className="flex flex-col items-center text-center max-w-xl mx-auto mb-12 md:mb-16">
-          <AnimatedText className="flex flex-col items-center w-full">
-            <span className="eyebrow">Location</span>
-            <div className="w-10 h-px bg-oak-gold mt-3" />
-          </AnimatedText>
-          <AnimatedText delay={0.15}>
-            <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream mt-6 mb-4 leading-[1.15]">
-              Perfectly Positioned,{" "}
-              <span className="italic text-oak-gold">Supremely Connected</span>
-            </h2>
-          </AnimatedText>
-          <AnimatedText delay={0.25}>
-            <p className="text-oak-muted text-sm md:text-base font-light leading-relaxed">
-              Shamshabad's finest address — minutes from the airport, connected to everything Hyderabad has to offer.
-            </p>
-          </AnimatedText>
+        <div className="w-full flex justify-center mb-12 md:mb-16">
+          <div className="flex flex-col items-center text-center max-w-xl">
+            <AnimatedText className="flex flex-col items-center w-full">
+              <span className="eyebrow">Location</span>
+              <div className="w-10 h-px bg-oak-gold mt-3" />
+            </AnimatedText>
+            <AnimatedText delay={0.15}>
+              <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream mt-6 mb-4 leading-[1.15]">
+                Perfectly <span className="italic text-oak-gold">Positioned</span>
+              </h2>
+            </AnimatedText>
+            <AnimatedText delay={0.25}>
+              <p className="text-oak-muted text-sm md:text-base font-light leading-relaxed">
+                Experience the ultimate convenience. Located just minutes from Rajiv Gandhi International Airport, offering seamless connectivity and peaceful rest.
+              </p>
+            </AnimatedText>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-7 lg:gap-10 items-start">

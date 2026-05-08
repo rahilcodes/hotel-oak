@@ -60,22 +60,23 @@ export function TestimonialsSection() {
   return (
     <section id="testimonials" className="sec bg-oak-dark/30 overflow-hidden">
       <div className="wrap">
-        <div className="flex flex-col items-center text-center max-w-xl mx-auto mb-12 md:mb-16">
-          <AnimatedText className="flex flex-col items-center w-full">
-            <span className="eyebrow">Guest Stories</span>
-            <div className="w-10 h-px bg-oak-gold mt-3" />
-          </AnimatedText>
-          <AnimatedText delay={0.15}>
-            <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream mt-6 mb-4 leading-[1.15]">
-              Voices of Our{" "}
-              <span className="italic text-oak-gold">Distinguished Guests</span>
-            </h2>
-          </AnimatedText>
-          <AnimatedText delay={0.25}>
-            <p className="text-oak-muted text-sm md:text-base font-light leading-relaxed">
-              Real experiences from guests who've made Hotel Oak their home away from home.
-            </p>
-          </AnimatedText>
+        <div className="w-full flex justify-center mb-12 md:mb-16">
+          <div className="flex flex-col items-center text-center max-w-xl">
+            <AnimatedText className="flex flex-col items-center w-full">
+              <span className="eyebrow">Guest Stories</span>
+              <div className="w-10 h-px bg-oak-gold mt-3" />
+            </AnimatedText>
+            <AnimatedText delay={0.15}>
+              <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream mt-6 mb-4 leading-[1.15]">
+                Memories <span className="italic text-oak-gold">Made</span>
+              </h2>
+            </AnimatedText>
+            <AnimatedText delay={0.25}>
+              <p className="text-oak-muted text-sm md:text-base font-light leading-relaxed">
+                Read what our guests have to say about their stay at Hotel Oak. From seamless airport transits to luxurious relaxation.
+              </p>
+            </AnimatedText>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
