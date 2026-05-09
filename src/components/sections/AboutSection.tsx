@@ -1,91 +1,84 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRef } from "react";
-import { useInView } from "framer-motion";
-import { AnimatedText } from "@/components/ui/AnimatedText";
-
-const stats = [
-  { value: "3+",  label: "Room types" },
-  { value: "5km", label: "From airport" },
-  { value: "24/7",label: "Concierge" },
-  { value: "5★",  label: "Guest rating" },
-];
+import Image from "next/image";
 
 export function AboutSection() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
-
   return (
-    <section id="about" className="sec bg-oak-black overflow-hidden">
+    <section id="about" className="sec bg-[#09090B]">
       <div className="wrap">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-24 items-center">
-
-          {/* Image col */}
-          <AnimatedText direction="left" className="relative">
-            <div className="relative aspect-[4/5] max-h-[600px] rounded-sm overflow-hidden shadow-luxury">
-              <Image
-                src="/images/team.jpg"
-                alt="Hotel Oak team and lobby — warm professional hospitality at Shamshabad Hyderabad"
-                fill sizes="(max-width:1024px) 100vw, 50vw"
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          {/* Left: Text Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="eyebrow block mb-6">The Hotel Oak Experience</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-light leading-[1.1] mb-8 tracking-tight">
+              A Sanctuary of <br/>
+              <span className="font-medium">Modern Luxury.</span>
+            </h2>
+            <div className="space-y-6 text-[#A1A1AA] text-lg font-light leading-relaxed">
+              <p>
+                Perfectly positioned just moments from Rajiv Gandhi International Airport, 
+                Hotel Oak by Maxx Group redefines the transit and luxury stay experience in Hyderabad.
+              </p>
+              <p>
+                Whether you are traveling for business, seeking a restful layover, or exploring 
+                the rich heritage of Telangana, our exquisitely appointed rooms and world-class 
+                hospitality ensure an unforgettable stay. Experience the perfect harmony of 
+                convenience, comfort, and uncompromising luxury.
+              </p>
             </div>
-            {/* Floating card */}
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 10, scale: 0.92 }}
-              animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ delay: 0.5, duration: 0.7 }}
-              className="absolute -right-4 md:-right-6 bottom-10 glass rounded-sm p-5 min-w-[155px]"
-            >
-              <p className="eyebrow mb-1 text-[0.5rem]">Est. Since</p>
-              <p className="font-playfair text-4xl text-oak-gold leading-none">2020</p>
-              <p className="text-oak-muted text-xs font-light mt-2 leading-snug">
-                Shamshabad,<br />Hyderabad, India
-              </p>
-            </motion.div>
-          </AnimatedText>
 
-          {/* Text col */}
-          <div className="flex flex-col gap-6 md:gap-7">
-            <AnimatedText delay={0.1}>
-              <span className="eyebrow">Our Story</span>
-              <div className="gold-line mt-3" />
-            </AnimatedText>
-
-            <AnimatedText delay={0.2}>
-              <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream leading-[1.15]">
-                A Sanctuary for the{" "}
-                <span className="italic text-oak-gold">Modern Traveler</span>
-              </h2>
-            </AnimatedText>
-
-            <AnimatedText delay={0.3}>
-              <p className="text-oak-muted-light text-sm md:text-base font-light leading-[1.9]">
-                Nestled moments from Rajiv Gandhi International Airport, Hotel Oak by Maxx Group redefines the airport hotel experience. We believe proximity to the airport should never mean compromising on luxury — and so we've crafted a world where both coexist beautifully.
-              </p>
-            </AnimatedText>
-
-            <AnimatedText delay={0.4}>
-              <p className="text-oak-muted text-sm md:text-base font-light leading-[1.9]">
-                Whether you arrive on business or leisure, solo or with family — our thoughtfully designed spaces, impeccable service, and modern amenities ensure your stay is not just comfortable, but truly memorable.
-              </p>
-            </AnimatedText>
-
-            {/* Stats */}
-            <AnimatedText delay={0.5}>
-              <div className="grid grid-cols-4 gap-4 pt-6 border-t border-white/8">
-                {stats.map((s) => (
-                  <div key={s.label}>
-                    <p className="font-playfair text-2xl md:text-3xl text-oak-gold leading-none">{s.value}</p>
-                    <p className="text-oak-muted text-[0.6rem] font-light mt-1.5 leading-tight uppercase tracking-wide">{s.label}</p>
-                  </div>
-                ))}
+            <div className="grid grid-cols-2 gap-8 mt-12 border-t border-[#27272A] pt-12">
+              <div>
+                <p className="text-3xl font-light text-white mb-2">5<span className="text-[#A1A1AA] text-xl">min</span></p>
+                <p className="text-sm text-[#A1A1AA] tracking-wide uppercase">From RGIA Airport</p>
               </div>
-            </AnimatedText>
+              <div>
+                <p className="text-3xl font-light text-white mb-2">24<span className="text-[#A1A1AA] text-xl">/7</span></p>
+                <p className="text-sm text-[#A1A1AA] tracking-wide uppercase">Premium Room Service</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Images Grid */}
+          <div className="relative h-[600px] sm:h-[700px] w-full">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute top-0 right-0 w-[85%] h-[80%] bg-[#18181B] overflow-hidden"
+            >
+              <Image
+                src="/images/room-queen.jpg"
+                alt="Hotel Oak Luxury Room"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[#18181B] p-4 shadow-hover"
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/reception.jpg"
+                  alt="Hotel Oak Reception"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
           </div>
 
         </div>

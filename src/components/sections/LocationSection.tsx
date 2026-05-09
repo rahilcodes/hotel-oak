@@ -1,122 +1,93 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Plane, Building2, Compass, BriefcaseBusiness, MapPin, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+import { MapPin, Plane, Navigation } from "lucide-react";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 
-const spots = [
-  { icon: Plane,            label: "Rajiv Gandhi International Airport", dist: "5 km · ~10 minutes" },
-  { icon: Building2,        label: "Hyderabad City Centre",              dist: "30 km · ~45 minutes" },
-  { icon: Compass,          label: "Golconda Fort",                      dist: "35 km · ~55 minutes" },
-  { icon: BriefcaseBusiness,label: "HITEC City (IT Hub)",               dist: "40 km · ~60 minutes" },
-];
-
 export function LocationSection() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
-
   return (
-    <section id="location" className="sec bg-oak-black overflow-hidden">
+    <section id="location" className="sec bg-[#09090B]">
       <div className="wrap">
-
-        <div className="w-full flex justify-center mb-12 md:mb-16">
-          <div className="flex flex-col items-center text-center max-w-xl">
-            <AnimatedText className="flex flex-col items-center w-full">
-              <span className="eyebrow">Location</span>
-              <div className="w-10 h-px bg-oak-gold mt-3" />
-            </AnimatedText>
-            <AnimatedText delay={0.15}>
-              <h2 className="font-playfair text-3xl md:text-4xl xl:text-5xl text-oak-cream mt-6 mb-4 leading-[1.15]">
-                Perfectly <span className="italic text-oak-gold">Positioned</span>
-              </h2>
-            </AnimatedText>
-            <AnimatedText delay={0.25}>
-              <p className="text-oak-muted text-sm md:text-base font-light leading-relaxed">
-                Experience the ultimate convenience. Located just minutes from Rajiv Gandhi International Airport, offering seamless connectivity and peaceful rest.
-              </p>
-            </AnimatedText>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-7 lg:gap-10 items-start">
-
-          {/* Map */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          {/* Map area */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-3 rounded-sm overflow-hidden border border-white/5 shadow-luxury"
-            style={{ height: "420px" }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-[500px] bg-[#18181B] relative border border-[#27272A] shadow-subtle p-2"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.7826!2d78.4209!3d17.2312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba8f7c3f5dbf1%3A0x0!2sRudra+Colony%2C+Shamshabad%2C+Hyderabad%2C+Telangana+501218!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-              width="100%" height="100%"
-              style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg) saturate(0.4) brightness(0.88)" }}
-              allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              title="Hotel Oak Location — Rudra Colony, Shamshabad, Hyderabad"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15239.589886369286!2d78.4116298!3d17.2553955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbbdc619570891%3A0xc665c361afc59216!2sShamshabad%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: 'grayscale(100%) invert(90%) hue-rotate(180deg) opacity(80%)' }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
           </motion.div>
 
-          {/* Sidebar */}
-          <div ref={ref} className="lg:col-span-2 flex flex-col gap-3">
-            <AnimatedText delay={0.1}>
-              <p className="text-oak-muted text-sm font-light leading-relaxed mb-2">
-                Ideally situated in Rudra Colony, Shamshabad — our location makes Hotel Oak the natural choice for all Hyderabad travellers.
-              </p>
+          {/* Text Content */}
+          <div>
+            <AnimatedText>
+              <span className="eyebrow block mb-4">Location</span>
             </AnimatedText>
-
-            {spots.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, x: 16 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: i * 0.09 + 0.2, duration: 0.6 }}
-                className="flex items-center gap-3.5 px-4 py-3.5 border border-white/5 hover:border-oak-gold/25 transition-colors duration-300 group rounded-sm"
-              >
-                <div className="w-9 h-9 rounded-full border border-oak-gold/20 group-hover:border-oak-gold/50 flex items-center justify-center shrink-0 transition-colors duration-300">
-                  <s.icon size={13} className="text-oak-gold" />
-                </div>
-                <div>
-                  <p className="text-oak-cream text-sm font-medium leading-tight">{s.label}</p>
-                  <p className="text-oak-gold text-[0.65rem] font-light mt-0.5">{s.dist}</p>
-                </div>
-              </motion.div>
-            ))}
-
-            {/* Address + phone card */}
+            <AnimatedText delay={0.1}>
+              <h2 className="text-4xl md:text-5xl text-white font-light leading-[1.1] mb-8 tracking-tight">
+                Perfectly <span className="font-medium">Positioned.</span>
+              </h2>
+            </AnimatedText>
+            
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.7 }}
-              className="mt-1 p-4 border border-white/5 rounded-sm flex flex-col gap-3"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="space-y-8"
             >
-              <div className="flex gap-3">
-                <MapPin size={13} className="text-oak-gold shrink-0 mt-0.5" />
-                <address className="not-italic text-oak-muted text-[0.8rem] font-light leading-relaxed">
-                  10-231, Near International Airport Road, Rudra Colony, Shamshabad, Hyderabad — 501218
-                </address>
+              <p className="text-[#A1A1AA] font-light leading-relaxed text-lg">
+                Located in Shamshabad, Hotel Oak provides unmatched accessibility to the airport while maintaining a serene atmosphere for our guests.
+              </p>
+
+              <div className="space-y-6 pt-6 border-t border-[#27272A]">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#18181B] flex items-center justify-center shrink-0 border border-[#27272A]">
+                    <Plane size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">Rajiv Gandhi International Airport</h3>
+                    <p className="text-[#A1A1AA] text-sm font-light">5.2 km away — ~10 minutes by car</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#18181B] flex items-center justify-center shrink-0 border border-[#27272A]">
+                    <Navigation size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">City Center (Banjara Hills/Jubilee Hills)</h3>
+                    <p className="text-[#A1A1AA] text-sm font-light">25 km away — ~40 minutes via PVNR Expressway</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#18181B] flex items-center justify-center shrink-0 border border-[#27272A]">
+                    <MapPin size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">Hotel Oak by Maxx Group</h3>
+                    <p className="text-[#A1A1AA] text-sm font-light">
+                      10-231, Near International Airport Road,<br/>
+                      Rudra Colony, Shamshabad, Telangana 501218
+                    </p>
+                  </div>
+                </div>
               </div>
-              <a href="tel:+919959503444" className="flex items-center gap-3 group/phone">
-                <Phone size={13} className="text-oak-gold shrink-0" />
-                <span className="text-oak-cream text-sm font-semibold group-hover/phone:text-oak-gold transition-colors duration-300">
-                  +91 99595 03444
-                </span>
-              </a>
             </motion.div>
-
-            <motion.a
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.82 }}
-              href="https://maps.google.com/?q=Hotel+Oak+Rudra+Colony+Shamshabad+Hyderabad+501218"
-              target="_blank" rel="noopener noreferrer"
-              className="eyebrow text-[0.58rem] tracking-[0.18em] text-oak-gold hover:text-oak-gold-light transition-colors duration-300"
-            >
-              Get Directions →
-            </motion.a>
           </div>
-
+          
         </div>
       </div>
     </section>

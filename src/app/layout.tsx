@@ -142,7 +142,7 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#0A0A0A" />
+        <meta name="theme-color" content="#09090B" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="format-detection" content="telephone=yes" />
         <script
@@ -150,7 +150,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelSchema) }}
         />
       </head>
-      <body className="bg-oak-black text-oak-cream font-inter antialiased overflow-x-hidden">
+      <body className="antialiased">
         {children}
       </body>
     </html>
