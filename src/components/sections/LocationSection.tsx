@@ -19,7 +19,7 @@ export function LocationSection() {
             className="w-full h-[500px] bg-[#18181B] relative border border-[#27272A] shadow-subtle p-2"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15239.589886369286!2d78.4116298!3d17.2553955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbbdc619570891%3A0xc665c361afc59216!2sShamshabad%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.138202245987!2d78.3918135!3d17.260547499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbbd4716d517a5%3A0xe6fc199f20c79180!2sHotel%20OAK%20By%20Maxx%20Group!5e0!3m2!1sen!2sin!4v1778326211157!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0, filter: 'grayscale(100%) invert(90%) hue-rotate(180deg) opacity(80%)' }}

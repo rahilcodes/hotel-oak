@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ROOM_TYPES } from "@/lib/roomData";
 import { formatCurrency } from "@/lib/utils";
@@ -19,7 +20,7 @@ function RoomCard({ room, index }: { room: (typeof ROOM_TYPES)[0]; index: number
       className="group relative flex flex-col bg-[#18181B] border border-[#27272A] overflow-hidden transition-all duration-500 hover:shadow-hover hover:border-[#A1A1AA]/30"
     >
       {/* Image */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#09090B]">
+      <Link href={`/rooms/${room.id}`} className="relative aspect-[4/3] w-full overflow-hidden bg-[#09090B] block">
         <motion.div 
           className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
         >
@@ -31,13 +32,15 @@ function RoomCard({ room, index }: { room: (typeof ROOM_TYPES)[0]; index: number
             className="object-cover object-center"
           />
         </motion.div>
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="flex flex-col flex-grow p-8">
         <div className="flex justify-between items-start mb-6">
           <div>
-            <h3 className="text-2xl text-white font-light mb-1">{room.name}</h3>
+            <Link href={`/rooms/${room.id}`}>
+              <h3 className="text-2xl text-white font-light mb-1 hover:text-[#A1A1AA] transition-colors">{room.name}</h3>
+            </Link>
             <p className="text-sm text-[#A1A1AA]">{room.size} · {room.bedType} · Up to {room.maxOccupancy} Guests</p>
           </div>
         </div>
@@ -51,12 +54,20 @@ function RoomCard({ room, index }: { room: (typeof ROOM_TYPES)[0]; index: number
             <span className="text-xl text-white font-medium">{formatCurrency(room.pricePerNight)}</span>
             <span className="text-xs text-[#A1A1AA] uppercase tracking-wide ml-2">/ night</span>
           </div>
-          <button
-            onClick={() => { addRoom(room.id); openBooking(); }}
-            className="text-sm uppercase tracking-widest text-white font-medium hover:text-[#A1A1AA] transition-colors"
-          >
-            Book
-          </button>
+          <div className="flex items-center gap-4">
+            <Link
+              href={`/rooms/${room.id}`}
+              className="text-[0.65rem] uppercase tracking-widest text-[#A1A1AA] hover:text-white transition-colors"
+            >
+              Details
+            </Link>
+            <button
+              onClick={() => { addRoom(room.id); openBooking(); }}
+              className="px-6 py-2.5 text-[0.65rem] tracking-widest uppercase bg-white text-[#09090B] hover:bg-[#EAEAEA] transition-colors font-medium"
+            >
+              Book Now
+            </button>
+          </div>
         </div>
       </div>
     </motion.article>

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { BookingModal } from "@/components/booking/BookingModal";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -18,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.hoteloakhyderabad.com"),
+  metadataBase: new URL("https://www.hoteloaks.com"),
   title: {
     default: "Hotel Oak by Maxx Group | Luxury Hotel Near Hyderabad Airport",
     template: "%s | Hotel Oak by Maxx Group",
@@ -68,7 +70,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Hotel Oak by Maxx Group" }],
   category: "hospitality",
   alternates: {
-    canonical: "https://www.hoteloakhyderabad.com",
+    canonical: "https://www.hoteloaks.com",
   },
 };
 
@@ -79,7 +81,7 @@ const hotelSchema = {
   name: "Hotel Oak by Maxx Group",
   description:
     "Premium luxury hotel near Rajiv Gandhi International Airport, Shamshabad, Hyderabad offering elegant rooms, fine dining, and world-class hospitality.",
-  url: "https://www.hoteloakhyderabad.com",
+  url: "https://www.hoteloaks.com",
   telephone: "+919959503444",
   priceRange: "₹₹₹",
   address: {
@@ -151,7 +153,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        {children}
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+        <BookingModal />
       </body>
     </html>
   );

@@ -56,7 +56,7 @@ export function AboutSection() {
               className="absolute top-0 right-0 w-[85%] h-[80%] bg-[#18181B] overflow-hidden"
             >
               <Image
-                src="/images/room-queen.jpg"
+                src="/images/queen-room/322632394.jpg"
                 alt="Hotel Oak Luxury Room"
                 fill
                 className="object-cover"

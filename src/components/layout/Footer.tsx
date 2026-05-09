@@ -2,6 +2,7 @@
 
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useBookingStore } from "@/store/bookingStore";
+import Link from "next/link";
 
 export function Footer() {
   const { openBooking } = useBookingStore();
@@ -27,10 +28,9 @@ export function Footer() {
           <div>
             <h3 className="text-sm tracking-widest uppercase text-white mb-6">Explore</h3>
             <ul className="space-y-4 text-sm text-[#A1A1AA] font-light">
-              <li><a href="#rooms" className="hover:text-white transition-colors">Accommodations</a></li>
-              <li><a href="#amenities" className="hover:text-white transition-colors">Amenities</a></li>
-              <li><a href="#dining" className="hover:text-white transition-colors">Dining</a></li>
-              <li><a href="#gallery" className="hover:text-white transition-colors">Gallery</a></li>
+              <li><Link href="/#rooms" className="hover:text-white transition-colors">Accommodations</Link></li>
+              <li><Link href="/#about" className="hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/#location" className="hover:text-white transition-colors">Location</Link></li>
             </ul>
           </div>
 
@@ -48,7 +48,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="shrink-0" />
-                <a href="mailto:reservations@hoteloak.com" className="hover:text-white transition-colors">reservations@hoteloak.com</a>
+                <a href="mailto:reservations@hoteloaks.com" className="hover:text-white transition-colors">reservations@hoteloaks.com</a>
               </li>
             </ul>
           </div>

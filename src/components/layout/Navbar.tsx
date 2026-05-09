@@ -2,32 +2,40 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useBookingStore } from "@/store/bookingStore";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 const links = [
   { label: "Rooms", href: "#rooms" },
-  { label: "Amenities", href: "#amenities" },
-  { label: "Dining", href: "#dining" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "About", href: "#about" },
   { label: "Location", href: "#location" },
 ];
-
-function goto(href: string) {
-  document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { openBooking } = useBookingStore();
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    } else {
+      setMenuOpen(false);
+    }
+  };
 
   return (
     <>
@@ -42,28 +50,29 @@ export function Navbar() {
       >
         <div className="wrap flex items-center justify-between gap-6">
           {/* Logo */}
-          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex flex-col shrink-0 text-left">
+          <Link href="/" className="flex flex-col shrink-0 text-left">
             <span className={cn("text-xl tracking-tight font-medium transition-colors duration-300", scrolled ? "text-white" : "text-white")}>
               HOTEL OAK
             </span>
             <span className={cn("text-[0.65rem] tracking-widest uppercase transition-colors duration-300", scrolled ? "text-[#A1A1AA]" : "text-[#A1A1AA]")}>
               by Maxx Group
             </span>
-          </button>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-10">
             {links.map((l) => (
-              <button
+              <Link
                 key={l.href}
-                onClick={() => goto(l.href)}
+                href={`/${l.href}`}
+                onClick={(e) => handleNavClick(e, l.href)}
                 className={cn(
                   "text-sm tracking-wide transition-colors duration-300",
                   scrolled ? "text-[#A1A1AA] hover:text-white" : "text-white/80 hover:text-white"
                 )}
               >
                 {l.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
@@ -107,16 +116,20 @@ export function Navbar() {
           >
             <nav className="flex flex-col gap-8 flex-1">
               {links.map((l, i) => (
-                <motion.button
+                <motion.div
                   key={l.href}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={() => { setMenuOpen(false); goto(l.href); }}
-                  className="text-4xl tracking-tight text-white text-left"
                 >
-                  {l.label}
-                </motion.button>
+                  <Link
+                    href={`/${l.href}`}
+                    onClick={(e) => handleNavClick(e, l.href)}
+                    className="text-4xl tracking-tight text-white text-left block w-full"
+                  >
+                    {l.label}
+                  </Link>
+                </motion.div>
               ))}
             </nav>
             <div className="flex flex-col gap-4">
