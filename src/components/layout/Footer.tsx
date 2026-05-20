@@ -15,7 +15,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <h2 className="text-2xl tracking-tight text-white mb-2">HOTEL OAK</h2>
-            <p className="text-xs tracking-widest text-[#A1A1AA] uppercase mb-6">by Maxx Group</p>
+            <p className="text-xs tracking-widest text-[#A1A1AA] uppercase mb-6">by Mega Groups</p>
             <p className="text-[#A1A1AA] text-sm font-light leading-relaxed mb-8 max-w-xs">
               A sanctuary of refined elegance moments from Rajiv Gandhi International Airport.
             </p>
@@ -75,7 +75,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#A1A1AA] font-light tracking-wide">
-          <p>&copy; {new Date().getFullYear()} Hotel Oak by Maxx Group. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Hotel Oak by Mega Groups. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

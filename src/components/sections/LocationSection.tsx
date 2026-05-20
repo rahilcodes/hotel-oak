@@ -77,7 +77,7 @@ export function LocationSection() {
                     <MapPin size={18} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium mb-1">Hotel Oak by Maxx Group</h3>
+                    <h3 className="text-white font-medium mb-1">Hotel Oak by Mega Groups</h3>
                     <p className="text-[#A1A1AA] text-sm font-light">
                       10-231, Near International Airport Road,<br/>
                       Rudra Colony, Shamshabad, Telangana 501218

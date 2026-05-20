@@ -59,7 +59,7 @@ export function generateWhatsAppMessage(booking: BookingDetails): string {
       ? `${booking.adults} Adults, ${booking.children} Children`
       : `${booking.adults} Adults`;
 
-  const message = `Hello Hotel Oak by Maxx Group,
+  const message = `Hello Hotel Oak by Mega Groups,
 
 I would like to request a booking.
 

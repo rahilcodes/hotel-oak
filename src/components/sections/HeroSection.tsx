@@ -13,7 +13,7 @@ export function HeroSection() {
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="/images/hotel-building-view.jpg"
-          alt="Hotel Oak by Maxx Group"
+          alt="Hotel Oak by Mega Groups"
           fill
           priority
           sizes="100vw"

@@ -22,8 +22,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.hoteloaks.com"),
   title: {
-    default: "Hotel Oak by Maxx Group | Luxury Hotel Near Hyderabad Airport",
-    template: "%s | Hotel Oak by Maxx Group",
+    default: "Hotel Oak by Mega Groups | Luxury Hotel Near Hyderabad Airport",
+    template: "%s | Hotel Oak by Mega Groups",
   },
   description:
     "Premium luxury hotel near Rajiv Gandhi International Airport, Shamshabad, Hyderabad. Elegant rooms (160–240 m²), fine dining, airport shuttle & world-class hospitality. Call +91 99595 03444.",
@@ -34,40 +34,40 @@ export const metadata: Metadata = {
     "hotel in shamshabad hyderabad",
     "hotels near RGIA hyderabad",
     "hotel oak hyderabad",
-    "hotel oak maxx group",
+    "hotel oak mega groups",
     "shamshabad hotel telangana",
     "business hotel hyderabad airport",
     "hotel near rajiv gandhi international airport",
     "luxury stay near hyderabad airport",
   ],
   openGraph: {
-    title: "Hotel Oak by Maxx Group | Luxury Airport Hotel Hyderabad",
+    title: "Hotel Oak by Mega Groups | Luxury Airport Hotel Hyderabad",
     description:
-      "Experience world-class luxury 5 minutes from Rajiv Gandhi International Airport. Queen, Deluxe & Suite rooms from ₹3,999/night. Call +91 99595 03444.",
+      "Experience world-class luxury 5 minutes from Rajiv Gandhi International Airport. Queen, Deluxe & Suite rooms from ₹1,499/night. Call +91 99595 03444.",
     type: "website",
     locale: "en_IN",
-    siteName: "Hotel Oak by Maxx Group",
+    siteName: "Hotel Oak by Mega Groups",
     images: [
       {
         url: "/images/hotel-building-view.jpg",
         width: 1200,
         height: 630,
-        alt: "Hotel Oak by Maxx Group — Luxury Airport Hotel, Shamshabad Hyderabad",
+        alt: "Hotel Oak by Mega Groups — Luxury Airport Hotel, Shamshabad Hyderabad",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hotel Oak by Maxx Group | Luxury Airport Hotel Hyderabad",
+    title: "Hotel Oak by Mega Groups | Luxury Airport Hotel Hyderabad",
     description:
-      "Premium airport hotel in Shamshabad, Hyderabad. Elegant rooms from ₹3,999/night. Book direct — best rate guaranteed.",
+      "Premium airport hotel in Shamshabad, Hyderabad. Elegant rooms from ₹1,499/night. Book direct — best rate guaranteed.",
   },
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  authors: [{ name: "Hotel Oak by Maxx Group" }],
+  authors: [{ name: "Hotel Oak by Mega Groups" }],
   category: "hospitality",
   alternates: {
     canonical: "https://www.hoteloaks.com",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
 const hotelSchema = {
   "@context": "https://schema.org",
   "@type": "Hotel",
-  name: "Hotel Oak by Maxx Group",
+  name: "Hotel Oak by Mega Groups",
   description:
     "Premium luxury hotel near Rajiv Gandhi International Airport, Shamshabad, Hyderabad offering elegant rooms, fine dining, and world-class hospitality.",
   url: "https://www.hoteloaks.com",

@@ -28,7 +28,7 @@ export const ROOM_TYPES: RoomType[] = [
     view: "City View",
     description:
       "A generously proportioned 160 m² retreat featuring a plush full bed, marble floors, and a serene city-view workspace. Designed for the discerning traveler who expects refined comfort at every turn.",
-    pricePerNight: 3999,
+    pricePerNight: 1499,
     maxOccupancy: 2,
     size: "160 m²",
     image: "/images/queen-room/322632394.jpg",
@@ -59,7 +59,7 @@ export const ROOM_TYPES: RoomType[] = [
     view: "City View",
     description:
       "An expansive 210 m² sanctuary with a commanding king bed, tile and marble floors, and sweeping city views. Every detail — from the electric kettle to the sofa — is curated for the modern luxury traveler.",
-    pricePerNight: 5999,
+    pricePerNight: 1699,
     maxOccupancy: 3,
     size: "210 m²",
     image: "/images/deluxe-room/322632661.jpg",
@@ -94,7 +94,7 @@ export const ROOM_TYPES: RoomType[] = [
     view: "City View",
     description:
       "Our crown jewel — a palatial 240 m² suite offering city views, a private dining area, sofa lounge, and an indulgent marble bathroom. Elevator access, impeccable linens, and unrivaled airport-side opulence.",
-    pricePerNight: 8999,
+    pricePerNight: 1999,
     maxOccupancy: 4,
     size: "240 m²",
     image: "/images/suite-room/322632671.jpg",

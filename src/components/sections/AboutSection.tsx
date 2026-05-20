@@ -24,7 +24,7 @@ export function AboutSection() {
             <div className="space-y-6 text-[#A1A1AA] text-lg font-light leading-relaxed">
               <p>
                 Perfectly positioned just moments from Rajiv Gandhi International Airport, 
-                Hotel Oak by Maxx Group redefines the transit and luxury stay experience in Hyderabad.
+                Hotel Oak by Mega Groups redefines the transit and luxury stay experience in Hyderabad.
               </p>
               <p>
                 Whether you are traveling for business, seeking a restful layover, or exploring 

@@ -55,7 +55,7 @@ export function Navbar() {
               HOTEL OAK
             </span>
             <span className={cn("text-[0.65rem] tracking-widest uppercase transition-colors duration-300", scrolled ? "text-[#A1A1AA]" : "text-[#A1A1AA]")}>
-              by Maxx Group
+              by Mega Groups
             </span>
           </Link>
 
